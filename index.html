@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+  .perspective {
+    perspective: 1000px;
+  }
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+
+  @keyframes moveup {
+    0%{
+    opacity: 0;
+    transform: translateY(30px);
+    }
+    100% {
+    opacity: 1;
+    transform: translateY(0);
+    }
+  }
+  .anim {
+    animation: moveup 0.5s ease-out backwards;
+  }
+  .anim-delay-1 { animation-delay: 0.5s; }
+  .anim-delay-2 { animation-delay: 1s; }
+  .anim-delay-3 { animation-delay: 1.4s; }
+  .anim-delay-4 { animation-delay: 1.8s; }
+
+  @keyframes moveleft {
+    0%{
+      opacity: 0;
+      transform: translateX(40px);
+    }
+    100%{
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  .icon {
+    animation: moveleft 0.5s ease-out 2s backwards;
+  }
+  .icon-delay-1 {animation-delay: 2.1s;}
+  .icon-delay-2 {animation-delay: 2.2s;}
+  .icon-delay-3 {animation-delay: 2.3s;}
+  .icon-delay-4 {animation-delay: 2.4s;}
+  </style>
+</head>
+
+<body class="m-0 p-0 font-sans box-border bg-gray-100 text-[#5D4037]">
+
+  <!-- Navigation -->
+  <nav class="flex justify-between items-center p-3 sm:p-4 bg-white shadow-xl relative">
+    <h1 class="flex text-2xl sm:text-4xl font-bold"><img src="icon/portfolio_icon.png " class="w-8 h-8 sm:w-10 sm:h-10">Port<span class="text-orange-500">folio</span></h1>
+    
+    <!-- Hamburger Menu (Mobile) -->
+    <input type="checkbox" id="menu-toggle" class="hidden peer">
+    <label for="menu-toggle" class="md:hidden cursor-pointer text-2xl font-bold text-orange-500 ml-auto">☰</label>
+    
+    <!-- Desktop Navigation -->
+    <ul class="hidden md:flex space-x-3 lg:space-x-6 text-lg lg:text-xl">
+      <li><a href="#Home" class="font-semibold text-orange-500 border-b-2 border-orange-500">Home</a></li>
+        <li><a href="#About" class="font-semibold hover:text-orange-500 hover:border-b-2 border-orange-500">About</a></li>
+        <li><a href="#Skills"class="font-semibold hover:text-orange-500 hover:border-b-2 border-orange-500">Skills</a></li>
+        <li><a href="#Project"class="font-semibold hover:text-orange-500 hover:border-b-2 border-orange-500">Project</a></li>
+        <li><a href="#Education"class="font-semibold hover:text-orange-500 hover:border-b-2 border-orange-500">Education</a></li>
+        <li><a href="#Contact"class="font-semibold hover:text-orange-500 hover:border-b-2 border-orange-500">Contact</a></li>
+    </ul>
+    
+    <!-- Mobile Menu -->
+    <div class="fixed right-0 top-0 h-screen w-[45%] bg-white shadow-lg transform translate-x-full peer-checked:translate-x-0 transition-transform duration-300 z-50 pt-6 md:hidden">
+    <!-- Close Button -->
+    <label for="menu-toggle"
+        class="absolute top-4 right-4 text-3xl font-bold cursor-pointer
+           text-gray-600 hover:text-orange-500">
+    &times;
+    </label>
+
+  <!-- Menu Items -->
+  <ul class="flex flex-col space-y-4 px-6 mt-14">
+    <li><label for="menu-toggle"><a href="#Home" onclick="document.getElementById('menu-toggle').checked = false;" class="font-semibold text-orange-500 border-b-2 border-orange-500 block text-lg">Home</a></label></li>
+    <li><label for="menu-toggle"><a href="#About" onclick="document.getElementById('menu-toggle').checked = false;" class="font-semibold hover:text-orange-500 block text-lg">About</a></label></li>
+    <li><label for="menu-toggle"><a href="#Skills" onclick="document.getElementById('menu-toggle').checked = false;" class="font-semibold hover:text-orange-500 block text-lg">Skills</a></label></li>
+    <li><label for="menu-toggle"><a href="#Project" onclick="document.getElementById('menu-toggle').checked = false;" class="font-semibold hover:text-orange-500 block text-lg">Project</a></label></li>
+    <li><label for="menu-toggle"><a href="#Education" onclick="document.getElementById('menu-toggle').checked = false;" class="font-semibold hover:text-orange-500 block text-lg">Education</a></label></li>
+    <li><label for="menu-toggle"><a href="#Contact" onclick="document.getElementById('menu-toggle').checked = false;" class="font-semibold hover:text-orange-500 block text-lg">Contact</a></label></li>
+  </ul>
+
+  </div>
+  </nav>
+
+  <!-- Home Section -->
+  <section id="Home" class="flex flex-col lg:flex-row">
+
+    <div class="flex-1 flex flex-col pb-[6%] px-4 sm:px-[6%] pt-8 sm:pt-0 items-start justify-center min-h-auto sm:min-h-screen">
+      <h2 class="text-2xl sm:text-4xl lg:text-4xl text-gray-500 font-bold anim">Greetings! I'm </h2>
+      <h1 class="text-3xl sm:text-5xl lg:text-5xl py-3 sm:py-5 font-bold anim anim-delay-1">Suraj Gupta</h1>
+      <h3 class="text-2xl sm:text-4xl lg:text-4xl pb-8 sm:pb-[15%] font-bold text-gray-500 anim anim-delay-2">Your Next <span class=" text-orange-500 text-semibold">Web Developer</span></h3>
+      <div class="mt-0 sm:mt-1 px-2 hover:scale-105 duration-[0.3s]">
+        <a href="#"class="border-r-2 border-b-4 border-orange-400 text-lg sm:text-2xl px-6 sm:px-10 py-2 rounded-xl bg-gray-400 text-coffee-900 font-bold hover:bg-gray-500 hover:border-gray-500 hover:text-orange-400 duration-[0.4s] anim anim-delay-3">Download CV </a>
+      </div>
+    </div>
+
+    <div class="flex-1 flex justify-between items-center flex-col md:flex-row py-6 sm:py-6 px-4">
+      <img class="anim anim-delay-4 w-40 sm:w-48 md:w-56 lg:w-auto" src="icon/1d0d1680-75a5dfc3fda4.png">
+
+  <!--social media-->
+    <div class="flex flex-row md:flex-col gap-2 sm:gap-2 py-1 sm:py-0 md:pb-[10%]">
+      
+      <a href="https://www.linkedin.com/in/suraj-gupta-11j45/" class="p-3 sm:p-3 pb-1 sm:pb-1 border-r-2 border-b-4 border-orange-400 bg-gray-400 rounded-full hover:scale-110 hover:border-blue-500 hover:bg-blue-500 duration-[0.3s] icon">
+       <img src="icon/linkedin.png" class="w-6 h-6 sm:w-8 sm:h-8"></a>
+      <a href="https://github.com/surajgupta1122" class="p-2 sm:p-2 pb-0 sm:pb-0 border-r-2 border-b-4 border-orange-400 bg-gray-400 rounded-full hover:scale-110 hover:border-[#FED7AA] hover:bg-gradient-to-tr from-[#FED7AA] to-[#aafed7] duration-[0.3s] icon icon-delay-1">
+       <img src="icon/github.png" class="w-8 h-8 sm:w-10 sm:h-10"></a>
+      <a href="#" class="p-3 sm:p-3 pb-1 sm:pb-1 border-r-2 border-b-4 border-orange-400 bg-gray-400 rounded-full hover:scale-110 hover:border-blue-400 hover:bg-gradient-to-tr from-blue-400 to-[#6860fa] duration-[0.3s] icon icon-delay-2">
+       <img src="icon/twitter.png" class="w-6 h-6 sm:w-8 sm:h-8"></a>
+      <a href="#" class="p-3 sm:p-3 pb-1 sm:pb-1 border-r-2 border-b-4 border-orange-400 bg-gray-400 rounded-full hover:scale-110 hover:bg-gradient-to-tr from-[#FB923C] to-[#EC4899] duration-[0.3s] icon icon-delay-3">
+       <img src="icon/instagram.png" class="w-6 h-6 sm:w-8 sm:h-8"></a>
+      <a href="#" class="p-3 sm:p-3 pb-1 sm:pb-1 border-r-2 border-b-4 border-orange-400 bg-gray-400 rounded-full hover:scale-110 hover:border-blue-600 hover:bg-blue-600 duration-[0.3s] icon icon-delay-4">
+       <img src="icon/facebook.png" class="w-6 h-6 sm:w-8 sm:h-8"></a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="About" class="flex flex-col lg:flex-row">
+    <div class="flex-1 max-w-xl px-4 sm:px-0">
+      <img class="pt-[15%] sm:pt-[30%] w-full sm:w-auto" src="icon/5128573.png">
+    </div>
+
+    <div class="flex-1 py-8 sm:py-16 items-start px-4 sm:px-7">
+    <div class="border-l-4 shadow-xl border-orange-500 pl-4">
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold">About <span class="text-orange-500">Me</span></h1>
+      <h3 class="text-xl sm:text-2xl lg:text-3xl font-semibold mt-6 sm:mt-8 text-[#F4511E]">Full Stack Developer!</h3>
+      <p class="mt-4 sm:mt-6 text-sm sm:text-lg font-semibold">
+       Hello! 👋 I’m Suraj Gupta, a creative web developer who loves coding, problem-solving, and bringing designs to life.
+       I specialize in crafting responsive websites that not only look great but also perform smoothly. 
+       When I’m not coding, I enjoy exploring new tech, learning new skills, and building projects that challenge me.
+      </p>
+
+    <div class="p-4 sm:p-6 grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-4 text-gray-800 text-xs sm:text-lg font-bold">
+     <div><p class="font-bold text-orange-600 text-xs sm:text-lg">📅Birth date:</p>
+      <p class="text-xs sm:text-lg">11 Nov, 2002</p></div>
+
+     <div><p class="font-bold text-orange-600 text-xs sm:text-lg">🏙️City:</p>
+      <p class="text-xs sm:text-lg">Uttar Pradesh</p></div>
+
+     <div><p class="font-bold text-orange-600 text-xs sm:text-lg">📧Email:</p>
+      <p class="text-xs sm:text-lg">sg8121094@gmail.com</p></div>
+
+     <div><p class="font-bold text-orange-600 text-xs sm:text-lg">📞Phone:</p>
+      <p class="text-xs sm:text-lg">+91 9540962288</p></div>
+
+     <div><p class="font-bold text-orange-600 text-xs sm:text-lg">🎂Age:</p>
+      <p class="text-xs sm:text-lg">22</p></div>
+
+     <div><p class="font-bold text-orange-600 text-xs sm:text-lg">💼Freelance:</p>
+      <p class="text-xs sm:text-lg">Available</p></div>
+
+    </div>
+    <p class="mt-4 sm:mt-6 text-sm sm:text-lg font-semibold pb-4">
+     With hands-on learning in JavaScript programming and Spring Boot, I am motivated to start my career in JavaScript web development.
+     An internship will allow me to apply my knowledge, gain industry exposure, and further develop 
+     my problem-solving and coding skills in a professional environment.
+    </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="Skills" class="py-8 sm:py-16">
+    <h3 class="text-3xl sm:text-4xl lg:text-5xl font-bold pb-[4%] text-center">Skills</h3>
+    <div class="container mx-auto text-center">
+
+    <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 px-4 sm:px-[8%] lg:px-[15%] text-lg sm:text-xl font-bold">
+
+    <div class="group perspective">
+    <div class="h-32 text-center  duration-500 preserve-3d group-hover:[transform:rotateY(180deg)]">
+        
+      <div class="absolute w-full h-full bg-white rounded-xl border border-orange-500 flex flex-col items-center justify-center backface-hidden">
+      <p class="text-5xl mb-2">🌐</p>
+      <h3 class="text-coffee-900">HTML</h3>
+      </div>
+
+      <div class="absolute w-full h-full bg-orange-500 text-white rounded-xl flex items-center justify-center backface-hidden [transform:rotateY(180deg)] font-semibold text-sm sm:text-lg lg:text-xl p-2">
+       Strong foundation in web standards and best practices for writing semantic HTML.</div>
+
+    </div>
+    </div>
+
+    <div class="group perspective">
+    <div class="h-32 text-center  duration-500 preserve-3d group-hover:[transform:rotateY(180deg)]">
+        
+      <div class="absolute w-full h-full bg-white rounded-xl flex flex-col justify-center border border-orange-500 backface-hidden">
+       <p class="text-5xl mb-2 ">🎨</p>
+       <h3 class="text-coffee-900 ">CSS</h3>
+      </div>
+
+      <div class="absolute w-full h-full bg-orange-500 text-white rounded-xl flex items-center justify-center backface-hidden [transform:rotateY(180deg)] font-semibold text-sm sm:text-lg lg:text-xl p-2">
+       Skilled in implementing modern layouts with Flexbox and Grid.</div>
+
+    </div>
+    </div>
+
+    <div class="group perspective">
+    <div class="h-32 text-center  duration-500 preserve-3d group-hover:[transform:rotateY(180deg)]">
+        
+      <div class="absolute w-full h-full bg-white rounded-xl flex flex-col items-center justify-center border border-orange-500 backface-hidden">
+       <p class="text-5xl mb-2 ">⚡</p>
+       <h3 class="text-coffee-900">JavaScript</h3>
+      </div>
+
+      <div class="absolute w-full h-full bg-orange-500 text-white rounded-xl flex items-center justify-center backface-hidden [transform:rotateY(180deg)] font-semibold text-l p-2">
+       Strong understanding of asynchronous programming. </div>
+
+    </div>
+    </div>
+
+    <div class="group perspective">
+    <div class="h-32 text-center  duration-500 preserve-3d group-hover:[transform:rotateY(180deg)]">
+        
+      <div class="absolute w-full h-full bg-white rounded-xl flex flex-col items-center justify-center border border-orange-500 backface-hidden">
+       <p class="text-5xl mb-2 ">⚛️</p>
+       <h3 class="text-coffee-900">React</h3>
+      </div>
+
+      <div class="absolute w-full h-full bg-orange-500 text-white rounded-xl flex items-center justify-center backface-hidden [transform:rotateY(180deg)] font-semibold text-sm sm:text-lg lg:text-xl p-2">
+       Proficient in building dynamic, single-page applications using React.js.</div>
+
+    </div>
+    </div>
+
+    <div class="group perspective">
+    <div class="h-32 text-center  duration-500 preserve-3d group-hover:[transform:rotateY(180deg)]">
+        
+      <div class="absolute w-full h-full bg-white rounded-xl flex flex-col items-center justify-center border border-orange-500 backface-hidden">
+       <p class="text-5xl mb-2 ">🔧</p>
+       <h3 class="text-coffee-900">C</h3>
+      </div>
+
+      <div class="absolute w-full h-full bg-orange-500 text-white rounded-xl flex items-center justify-center backface-hidden [transform:rotateY(180deg)] font-semibold text-sm sm:text-lg lg:text-xl p-2">
+       Strong foundation in C programming with focus on problem-solving and logic building.</div>
+
+    </div>
+    </div>
+
+    <div class="group perspective">
+    <div class="h-32 text-center  duration-500 preserve-3d group-hover:[transform:rotateY(180deg)]">
+        
+      <div class="absolute w-full h-full bg-white rounded-xl flex flex-col items-center justify-center border border-orange-500 backface-hidden">
+       <p class="text-5xl mb-2 ">⚙️</p>
+       <h3 class="text-coffee-900">C++</h3>
+      </div>
+
+      <div class="absolute w-full h-full bg-orange-500 text-white rounded-xl flex items-center justify-center backface-hidden [transform:rotateY(180deg)] font-semibold text-sm sm:text-lg lg:text-xl p-2">
+       Strong understanding of memory management, pointers, and low-level system concepts.</div>
+
+    </div>
+    </div>
+
+
+    <div class="group perspective">
+    <div class="h-32 text-center  duration-500 preserve-3d group-hover:[transform:rotateY(180deg)]">
+        
+      <div class="absolute w-full h-full bg-white rounded-xl flex flex-col items-center justify-center border border-orange-500 backface-hidden">
+       <p class="text-5xl mb-2 ">☕</p>
+       <h3 class="text-coffee-900">Java</h3>
+      </div>
+
+      <div class="absolute w-full h-full bg-orange-500 text-white rounded-xl flex items-center justify-center backface-hidden [transform:rotateY(180deg)] font-semibold text-sm sm:text-lg lg:text-xl p-2">
+       Capable of solving complex programming challenges with Java.</div>
+
+    </div>
+    </div>
+
+
+    </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="Project" class="mx-4 sm:mx-[4%]">
+    <h3 class="text-3xl sm:text-4xl lg:text-5xl font-bold pt-4 sm:pt-[6%] pb-4 sm:pb-[6%] text-center">Projects</h3>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 text-center px-4 sm:px-0">
+    <div class="bg-[#3E2723] rounded-lg overflow-hidden text-white shadow-lg hover:scale-105 duration-[0.4s]">
+      <img src="icon/Portfolio.jpg"alt="Project" class="w-full h-[63.5%]">
+    <div class="p-4 sm:p-6 hover:scale-105 duration-[0.4s]">
+      <h4 class="text-lg sm:text-2xl font-semibold mb-2">Project</h4>
+      <p class="mb-3 sm:mb-4 text-sm sm:text-base">This is my Portfolio code </p>
+      <a href="https://github.com/surajgupta1122/ck-internship-suraj-gupta-2025" class="text-[#5D4037] border-r-2 border-b-4 border-orange-400 text-sm sm:text-2xl px-4 sm:px-6 py-1 rounded-xl bg-gray-400 font-bold hover:bg-gray-500 hover:border-gray-500 hover:text-orange-400 duration-[0.4s]">View Project</a>
+    </div>
+    </div>
+    <div class="bg-[#3E2723] rounded-lg overflow-hidden text-white shadow-lg hover:scale-105 duration-[0.4s]">
+      <img src="icon/CCTV.jpg"alt="Project" class="w-full h-[63.5%]">
+    <div class="p-4 sm:p-6 hover:scale-105 duration-[0.4s]">
+      <h4 class="text-lg sm:text-2xl font-semibold mb-2">Project</h4>
+      <p class="mb-3 sm:mb-4 text-sm sm:text-base">This project is about cctv manager</p>
+      <a href="https://github.com/surajgupta1122/CCTV-MANAGEMENT" class="text-[#5D4037] border-r-2 border-b-4 border-orange-400 text-sm sm:text-2xl px-4 sm:px-6 py-1 rounded-xl bg-gray-400 font-bold hover:bg-gray-500 hover:border-gray-500 hover:text-orange-400 duration-[0.4s]">View Project</a>
+    </div>
+    </div>
+    <div class="bg-[#3E2723] rounded-lg overflow-hidden text-white shadow-lg hover:scale-105 duration-[0.4s]">
+      <img src="icon/project-management-graphic_53876-123902.avif"alt="Project" class="w-full">
+    <div class="p-4 sm:p-6 hover:scale-105 duration-[0.4s]">
+      <h4 class="text-lg sm:text-2xl font-semibold mb-2">Project</h4>
+      <p class="mb-3 sm:mb-4 text-sm sm:text-base">This one is group project about job search web</p>
+      <a href="#" class="text-[#5D4037] border-r-2 border-b-4 border-orange-400 text-sm sm:text-2xl px-4 sm:px-6 py-1 rounded-xl bg-gray-400 font-bold hover:bg-gray-500 hover:border-gray-500 hover:text-orange-400 duration-[0.4s]">View Project</a>
+    </div>
+    </div>
+    </div>
+  </section>
+
+  <!--Education-->
+  <section id="Education">
+    <h1 class="font-bold text-center pt-4 sm:pt-[5%] pb-2 sm:pb-[1%] text-3xl sm:text-4xl lg:text-5xl">Education</h1>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-10 p-4 sm:p-12">
+
+    <div class="w-1-2 shadow-xl border border-orange-400 rounded-xl px-6 sm:px-10 py-4 hover:scale-105 duration-500">
+      <h1 class="font-extrabold text-2xl sm:text-4xl text-orange-600">➳
+      <span class="text-gray-700 font-bold text-xl sm:text-3xl">SSC</span></h1>
+      <h3 class="text-orange-500 text-[110%] sm:text-[120%] font-bold">
+      >> <span class="text-[#5D4037] text-[85%] sm:text-[90%]">2020-2021</span><br>
+      >> <span class="text-[#5D4037] text-[85%] sm:text-[90%]">Vanasthali Public School</span><br>
+      >> <span class="text-[#5D4037] text-[85%] sm:text-[90%]">Mayur Vihar Phase-3,New Delhi,Delhi</span><br>
+      >> <span class="text-[#5D4037] text-[85%] sm:text-[90%]">Passed out 10th - Obtaining (52%)</span>
+    </h3>
+    </div>
+
+    <div class="w-1-2 shadow-xl border border-orange-400 rounded-xl px-6 sm:px-10 py-4 hover:scale-105 duration-500">
+      <h1 class="font-extrabold text-2xl sm:text-4xl text-orange-600">➳
+      <span class="font-bold text-xl sm:text-3xl text-gray-700">HSC</span></h1>
+      <h3 class="text-orange-500 text-[110%] sm:text-[120%] font-bold">
+      >> <span class="text-[#5D4037] text-[85%] sm:text-[90%]">2022-2023</span><br>
+      >> <span class="text-[#5D4037] text-[85%] sm:text-[90%]">Vanasthali Public School</span><br>
+      >> <span class="text-[#5D4037] text-[85%] sm:text-[90%]">Mayur Vihar Phase-3,New Delhi,Delhi</span><br>
+      >> <span class="text-[#5D4037] text-[85%] sm:text-[90%]">Passed out 10th - Obtaining (49%)</span>
+    </h3>
+    </div>
+
+    <div class="w-1-2 shadow-xl border border-orange-400 rounded-xl px-6 sm:px-10 py-4 hover:scale-105 duration-500 md:col-span-2 lg:col-span-1">
+      <h1 class="font-extrabold text-2xl sm:text-4xl text-orange-600">➳
+      <span class="font-bold text-xl sm:text-3xl text-gray-700">BCA</span></h1>
+      <h3 class="text-orange-500 text-[110%] sm:text-[120%] font-bold">
+      >> <span class="text-[#5D4037] text-[85%] sm:text-[90%]">2023-2026</span><br>
+      >> <span class="text-[#5D4037] text-[85%] sm:text-[90%]">Indira Gandhi National Open University(ignou),Delhi</span><br>
+      >> <span class="text-[#5D4037] text-[85%] sm:text-[90%]"> Vasundhara Enclave, Delhi, 110096, India</span><br>
+      >> <span class="text-[#5D4037] text-[85%] sm:text-[90%]">Pursuing</span>
+    </h3>
+    </div>
+
+  </div>
+  </section>
+
+  <!--Contacts-->
+  <section id="Contact" class="">
+    <h1 class="text-2xl sm:text-3xl lg:text-5xl text-center font-bold pt-4 sm:pt-[2%] pb-4 sm:pb-[2%]">Contact</h1>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 p-4 sm:p-10">
+
+      <div class="w-1-2 rounded-xl shadow-xl border border-orange-500 p-4 sm:p-4 hover:scale-105 duration-500">
+        <h2 class="flex justify-center text-center text-xl sm:text-2xl lg:text-3xl font-bold p-4 sm:p-6">Contact Me</h2>
+      <form >
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 px-4">
+
+      <div class="font-bold text-sm sm:text-base">FullName:<br>
+        <input type="text" name="FullName" placeholder="Full Name" required 
+        class="font-semibold w-full px-3 py-2 rounded-xl border border-slate-700 focus:ring-2 focus:ring-orange-500 focus:outline-none text-sm\"><br><br>
+      </div>
+
+      <div class="font-bold text-sm sm:text-base">Email:<br>
+        <input type="email" name="email" placeholder="Your Email" required 
+        class="font-semibold w-full px-3 py-2 rounded-xl border border-slate-700 focus:ring-2 focus:ring-orange-500 focus:outline-none text-sm\"><br><br>
+      </div>
+
+      <div class="font-bold text-sm sm:text-base">Phone:<br>
+        <input type="number" name="Phone" placeholder="Phone Number" required 
+        class="font-semibold w-full px-3 py-2 rounded-xl border border-slate-700 focus:ring-2 focus:ring-orange-500 focus:outline-none text-sm\"><br><br>
+      </div>
+        
+      <div class="font-bold text-sm sm:text-base">Address:<br>
+        <input type="text" name="Address" placeholder="Your Address" required 
+        class="font-semibold w-full px-3 py-2 rounded-xl border border-slate-700 focus:ring-2 focus:ring-orange-500 focus:outline-none text-sm\"><br><br>
+      </div>
+      </div>
+
+      <div class="px-4">
+      <div class="font-bold text-sm sm:text-base">Massage:<br>
+        <textarea name="Massage" placeholder="Write your massage..." rows="5" cols="5"
+        class="font-semibold w-full px-3 py-2 rounded-xl border border-slate-700 focus:ring-2 focus:ring-orange-500 focus:outline-none text-sm\"></textarea><br><br>
+      </div>
+
+      <div class="flex justify-center hover:scale-105 duration-[0.3s]">
+        <button class="border-r-2 border-b-4 border-orange-400 text-lg sm:text-2xl px-6 sm:px-10 py-2 rounded-xl bg-gray-400 text-coffee-900 font-bold hover:bg-gray-500 hover:border-gray-500 hover:text-orange-400 duration-[0.4s]">Send Massage</button>
+      </div>
+      </div>
+
+      </form>
+      </div>
+
+      <div class="w-1-2 rounded-xl shadow-xl border border-orange-500 p-4 sm:p-4 hover:scale-105 duration-500">
+        <h2 class="flex justify-center text-center text-xl sm:text-2xl lg:text-3xl font-bold p-4 sm:p-6">My Contact</h2>
+
+        <h3 class=" text-center text-lg sm:text-xl font-bold text-orange-500 py-3">Email:<br><span class="font-bold text-[#5D4037] text-sm sm:text-base\">sg8121095@gmail.com</span></h3>
+
+        <h3 class=" text-center text-lg sm:text-xl font-bold text-orange-500 py-3">Phone:<br><span class="font-bold text-[#5D4037] text-sm sm:text-base\">+91 9540962288</span></h3>
+
+        <h3 class=" text-center text-lg sm:text-xl font-bold text-orange-500 py-3">Location:<br><span class="font-bold text-[#5D4037] text-sm sm:text-base\">khora colony, Uttar Pradesh.</span></h3>
+
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-[#3E2723] text-[#FFF3E0] pt-5">
+    <p class="flex gap-2 flex items-center justify-center text-sm sm:text-lg px-4"><img src="icon/portfolio_icon.png" class="w-6 h-6 sm:w-8 sm:h-8">&copy; 2025 Suraj Gupta. Designed by Suraj Gupta.</p>
+  </footer>
+
+</body>
+</html>
